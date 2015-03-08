@@ -3,6 +3,7 @@ Javascript API for SmartPayKenya
 
 #Instatization
 It is recomended you load the Js File Async.
+
    // Load the SDK asynchronously
   (function(d, s, id) {
     var js, fjs = d.getElementsByTagName(s)[0];
