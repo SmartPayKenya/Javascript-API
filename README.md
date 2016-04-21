@@ -26,4 +26,54 @@ Smartpay.CLIENT_SUBSCRIBE: '/clients/subscribe',
 Smartpay.PAYMENT_ADD: '/payments/add',
 Smartpay.PAYMENT_CONFIRM: '/payments/confirm',
 ```
+##Actions
+### Creating a Client
+```javascript
+var client;
+SmartPay.client.add({
+  name: 'Mureithi Njuguna',
+  phone: '0712233238',
+  email: 'mureithinjugna@gmail.com'
+}, function(status, response) {
+    console.log(response.id);
+    console.log(status);
+    //status is the code. eg 200, 404
+    // response.id is the client id.
+    client = response.id;
+});
+```
+### Creating a Bill to the Client
+```javascript
+var bill;
+SmartPay.client.bill({
+  client: client,
+  amount: 900,
+  items: [
+      [{name : 'Domain smartpay.co.ke'}, {price: 800}],
+      [{name : 'Privacy'}, {price: 100}]
+  ]
+}, function(status, response) {
+    console.log(response.id);
+    console.log(status);
+    //status is the code. eg 200, 404
+    // response.id is the bill id.
+    bill = response.id;
+});
+```
+### Confirm a Payment
+var payment;
+SmartPay.payment.confirm({
+  client: client,
+  amount: 900,
+  method: 'MPESA',
+  code: 'KXAPORTZD90'
+}, function(status, response) {
+    console.log(response.id);
+    console.log(status);
+    //status is the code. eg 200, 404
+    // response.id is the Payment id.
+    payment = response.id;
+});
+
+## Hooks
 
