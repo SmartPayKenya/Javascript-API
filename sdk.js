@@ -24,7 +24,7 @@
         */
 /* global ajax */
 
-Smartpay = {
+SmartPay = {
     API: 'http://www.smartpay.co.ke/api',
     CLIENT_ADD: '/clients/add',
     CLIENT_BILL: '/clients/bill',
@@ -33,45 +33,45 @@ Smartpay = {
     PAYMENT_CONFIRM: '/payments/confirm',
     client : {
         add : function(client, callback){
-            ajax.post(Smartpay.API + Smartpay.CLIENT_ADD ,client,function(response){
+            ajax.post(SmartPay.API + SmartPay.CLIENT_ADD ,client,function(response){
                 callback(response.status, response.data);
-                if(Smartpay.hooks.on.client.add && response.status === 200)
-                    Smartpay.hooks.on.client.add();
+                if(SmartPay.hooks.on.client.add && response.status === 200)
+                    SmartPay.hooks.on.client.add();
             });
             
         },
         
         bill : function(bill, callback){
-            ajax.post(Smartpay.API + Smartpay.CLIENT_BILL,bill,function(response){
+            ajax.post(SmartPay.API + SmartPay.CLIENT_BILL,bill,function(response){
                 callback(response.status, response.data);
-                if(Smartpay.hooks.on.client.bill && response.status === 200)
-                    Smartpay.hooks.on.client.bill();
+                if(SmartPay.hooks.on.client.bill && response.status === 200)
+                    SmartPay.hooks.on.client.bill();
             });
             
         },
         subscribe : function(subscription, callback){
-            ajax.post(Smartpay.API + Smartpay.CLIENT_SUBSCRIBE,subscription,function(response){
+            ajax.post(SmartPay.API + SmartPay.CLIENT_SUBSCRIBE,subscription,function(response){
                 callback(response.status, response.data);
-                if(Smartpay.hooks.on.client.subscribe && response.status === 200)
-                    Smartpay.hooks.on.client.subscribe();
+                if(SmartPay.hooks.on.client.subscribe && response.status === 200)
+                    SmartPay.hooks.on.client.subscribe();
             });
             
         }
     },
     payment :{
         add: function(payment, callback){
-                ajax.post(Smartpay.API + Smartpay.PAYMENT_ADD,payment,function(response){
+                ajax.post(SmartPay.API + SmartPay.PAYMENT_ADD,payment,function(response){
                         callback(response.status, response.data);
-                        if(Smartpay.hooks.on.payment.add && response.status === 200)
-                            Smartpay.hooks.on.payment.add();
+                        if(SmartPay.hooks.on.payment.add && response.status === 200)
+                            SmartPay.hooks.on.payment.add();
                 });
                 
         },
         confirm: function(payment, callback){
-                    ajax.get(Smartpay.API + Smartpay.PAYMENT_CONFIRM ,payment,function(response){
+                    ajax.get(SmartPay.API + SmartPay.PAYMENT_CONFIRM ,payment,function(response){
                         callback(response.status, response.data);
-                        if(Smartpay.hooks.on.payment.confirm && response.status === 200)
-                            Smartpay.hooks.on.client.confirm();
+                        if(SmartPay.hooks.on.payment.confirm && response.status === 200)
+                            SmartPay.hooks.on.client.confirm();
                     });
                     
         }
