@@ -18,13 +18,13 @@ It is recomended you load the Js File Async.
 Set up the `SmartPay` Settings
 
 ```javascript
-Smartpay.API = 'Your API Url';
+SmartPay.API = 'Your API Url';
 //And the API Paths
-Smartpay.CLIENT_ADD: '/clients/add',
-Smartpay.CLIENT_BILL: '/clients/bill',
-Smartpay.CLIENT_SUBSCRIBE: '/clients/subscribe',
-Smartpay.PAYMENT_ADD: '/payments/add',
-Smartpay.PAYMENT_CONFIRM: '/payments/confirm',
+SmartPay.CLIENT_ADD: '/clients/add',
+SmartPay.CLIENT_BILL: '/clients/bill',
+SmartPay.CLIENT_SUBSCRIBE: '/clients/subscribe',
+SmartPay.PAYMENT_ADD: '/payments/add',
+SmartPay.PAYMENT_CONFIRM: '/payments/confirm',
 ```
 ##Actions
 ### Creating a Client
@@ -61,6 +61,7 @@ SmartPay.client.bill({
 });
 ```
 ### Confirm a Payment
+```javascript
 var payment;
 SmartPay.payment.confirm({
   client: client,
@@ -74,6 +75,8 @@ SmartPay.payment.confirm({
     // response.id is the Payment id.
     payment = response.id;
 });
+```
 
 ## Hooks
+-Todo
 
