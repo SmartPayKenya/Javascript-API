@@ -31,9 +31,9 @@ SmartPay.PAYMENT_CONFIRM: '/payments/confirm',
 ```javascript
 var client;
 SmartPay.client.add({
-  name: 'Mureithi Njuguna',
-  phone: '0712233238',
-  email: 'mureithinjugna@gmail.com'
+  name: 'John Wanjiku',
+  phone: '0712232222',
+  email: 'wanjikujohn@gmail.com'
 }, function(status, response) {
     console.log(response.id);
     console.log(status);
