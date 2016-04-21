@@ -92,6 +92,8 @@ SmartPay.payment.confirm({
 
 ## Hooks
 ###Example on client create
+```javascript
 SmartPay.hooks.on.client.add = function(){
     console.log('Client Added');
 };
+```
